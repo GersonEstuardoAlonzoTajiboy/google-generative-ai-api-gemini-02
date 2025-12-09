@@ -16,7 +16,7 @@ function fileToGenerativePart(path, mimeType) {
 }
 
 async function run() {
-  const modelAI = generativeAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+  const modelAI = generativeAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
 
   const prompt = `
   Instrucción: Analiza la imagen proporcionada, que muestra dos ilustraciones similares colocadas una al lado de la otra.
@@ -35,7 +35,7 @@ async function run() {
   `;
 
   const imageParts = [
-    fileToGenerativePart('find-differences.jpg', 'image/jpg'),
+    fileToGenerativePart('find-differences.jpg', 'image/jpeg'),
   ];
 
   const result = await modelAI.generateContent([prompt, ...imageParts]);
